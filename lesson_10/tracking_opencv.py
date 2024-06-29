@@ -18,18 +18,21 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # Load the dataset
-folder = '/home/janko/Projects/robot_dreams/cv/data/datasets/object-detection-crowdai'
+folder = 'frames'
 frames = os.listdir(folder)
 
 boxes = []
 
 # Sort (alphabetically) to ensure temporal consecutiveness
 frames.sort()
-idx = frames.index('1479498995506866553.jpg')
+idx = frames.index('output_frame_0001.png')
 
 # Let's assume the detector has detected a vehicle
-x1, y1 = 965, 555
-x2, y2 = 1015, 595
+##x1, y1 = 1377, 1499
+##x2, y2 = 1479, 1557
+
+x1, y1 = 1377, 1499
+x2, y2 = 1479, 1557
 
 
 width = x2 - x1

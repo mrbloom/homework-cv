@@ -1,5 +1,10 @@
 venv
+venvconda
+lesson_10/object-detection-crowdai
+lesson_10/frames
 *.onnx
 *.dat
 *.avi
 *.mp4
+*.mov
+*.zip

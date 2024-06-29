@@ -21,7 +21,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # Load the dataset
-folder = '/home/janko/Projects/robot_dreams/cv/data/datasets/object-detection-crowdai'
+folder = 'frames'
 frames = os.listdir(folder)
 
 boxes = []
@@ -29,30 +29,30 @@ boxes = []
 # Sort (alphabetically) to ensure temporal consecutiveness
 frames.sort()
 # idx = frames.index('1479498379965419997.jpg')
-idx = frames.index('1479498388466168072.jpg')
+# idx = frames.index('1479498388466168072.jpg')
 
-idx = frames.index('1479498406467355722.jpg')
+# idx = frames.index('1479498406467355722.jpg')
 
-idx = frames.index('1479498995506866553.jpg')
+idx = frames.index('output_frame_0046.png')
 
 # Let's assume the detector has detected a vehicle
 # x1, y1 = 1060, 580
 # x2, y2 = 1120, 630
 
-x1, y1 = 935, 555
-x2, y2 = 1080, 675
+##x1, y1 = 935, 555
+##x2, y2 = 1080, 675
+##
+##x1, y1 = 970, 570
+##x2, y2 = 1100, 670
 
-x1, y1 = 970, 570
-x2, y2 = 1100, 670
-
-x1, y1 = 965, 555
-x2, y2 = 1015, 595
+x1, y1 = 2200, 1421
+x2, y2 = 2392, 1507
 
 width = x2 - x1
 height = y2 - y1
 
 # Limit the search to a certain vicinity (since the cars can only move that fast)
-search = 50
+search = 70
 
 # Genrate tracking template
 img = cv2.imread(os.path.join(folder, frames[idx]))
@@ -61,7 +61,7 @@ template = img[y1:y2, x1:x2]/255
 
 cnt = 0
 # Tracking loop
-for ii in range(idx, idx + 50):
+for ii in range(idx, idx + 70):
     img = cv2.imread(os.path.join(folder, frames[ii]))
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)    
         

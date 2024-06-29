@@ -10,7 +10,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-video = cv2.VideoCapture("slow_traffic_small.mp4")
+video = cv2.VideoCapture("IMG_2222.MOV")
 
 # ShiTomasi corner detection
 config_st = {'maxCorners': 100,
